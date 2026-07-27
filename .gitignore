@@ -1,0 +1,16 @@
+# Build 
+build/ 
+*.o 
+*.exe 
+moc_* 
+ui_* 
+Makefile 
+# Qt 
+*.pro.user 
+*.autosave 
+# IDE 
+.qtc_clangd/ 
+CMakeLists.txt.user 
+# OS 
+Thumbs.db 
+.DS_Store 

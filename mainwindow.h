@@ -10,9 +10,9 @@
 #include <QGroupBox>
 #include <QPushButton>
 #include <QDateTime>
-#include <QFile>
-#include <QTextStream>
 #include <QFont>
+#include <QStorageInfo>
+#include <QRegularExpression>
 
 class SensorWidget : public QGroupBox {
     Q_OBJECT
@@ -64,4 +64,4 @@ private:
     bool monitoring;
 };
 
-#endif // MAINWINDOW_H
+#endif

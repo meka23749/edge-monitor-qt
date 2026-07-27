@@ -457,26 +457,69 @@ CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qtimezone.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QRegularExpression \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qregularexpression.h \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/QApplication \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/qapplication.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QFile \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/QChartView \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qchartview.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/QAbstractAxis \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qabstractaxis.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/QChartGlobal \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qchartglobal.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qtcharts-config.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qtchartsexports.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/QPen \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qpen.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/QFont \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QVariant \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QObject \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/QAbstractSeries \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qabstractseries.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/QChart \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qchart.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/QLegend \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qlegend.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QGraphicsWidget \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qgraphicswidget.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qgraphicslayoutitem.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qevent.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreevent.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qnativeinterface.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
- C:/Qt/6.11.1/mingw_64/include/QtGui/qguiapplication.h \
- C:/Qt/6.11.1/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.11.1/mingw_64/include/QtGui/qguiapplication_platform.h \
- C:/Qt/6.11.1/mingw_64/include/QtGui/QScreen \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qeventpoint.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qvector2d.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qvectornd.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qpointingdevice.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qinputdevice.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qscreen.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QList \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QObject \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QRect \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QSize \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QSizeF \
  C:/Qt/6.11.1/mingw_64/include/QtGui/QTransform \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qnativeinterface.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qscreen_platform.h \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/QStyleFactory \
- C:/Qt/6.11.1/mingw_64/include/QtWidgets/qstylefactory.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qgraphicsitem.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qpainterpath.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/QBrush \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QMargins \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QGraphicsView \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qgraphicsview.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qpainter.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/qtextoption.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qscrollarea.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qgraphicsscene.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/QLineSeries \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qlineseries.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/QXYSeries \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qxyseries.h \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/QImage \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/QValueAxis \
+ C:/Qt/6.11.1/mingw_64/include/QtCharts/qvalueaxis.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QApplication \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qapplication.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QRandomGenerator \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qrandom.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/random \
@@ -487,4 +530,5 @@ CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/xmmintrin.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mmintrin.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/mwaitintrin.h \
- C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/random.tcc
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/random.tcc \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QTextStream

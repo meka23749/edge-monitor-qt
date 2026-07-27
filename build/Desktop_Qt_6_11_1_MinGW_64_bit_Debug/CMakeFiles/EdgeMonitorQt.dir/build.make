@@ -68,23 +68,18 @@ include CMakeFiles/EdgeMonitorQt.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/EdgeMonitorQt.dir/flags.make
 
-EdgeMonitorQt_en_150.qm: C:/Qt/6.11.1/mingw_64/bin/lrelease.exe
-EdgeMonitorQt_en_150.qm: C:/Users/Steve/Desktop/EdgeMonitorQt/EdgeMonitorQt_en_150.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EdgeMonitorQt_en_150.qm"
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug
-	call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.1/mingw_64/bin/lrelease.exe C:/Users/Steve/Desktop/EdgeMonitorQt/EdgeMonitorQt_en_150.ts -qm C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/EdgeMonitorQt_en_150.qm
-
-.qt/rcc/qrc_EdgeMonitorQt_translations.cpp: EdgeMonitorQt_en_150.qm
-.qt/rcc/qrc_EdgeMonitorQt_translations.cpp: .qt/rcc/EdgeMonitorQt_translations.qrc
-.qt/rcc/qrc_EdgeMonitorQt_translations.cpp: C:/Qt/6.11.1/mingw_64/bin/rcc.exe
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Running rcc for resource EdgeMonitorQt_translations"
-	C:\Qt\6.11.1\mingw_64\bin\rcc.exe --output C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp --name EdgeMonitorQt_translations C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/EdgeMonitorQt_translations.qrc --no-zstd
+EdgeMonitorQt_autogen/timestamp: C:/Qt/6.11.1/mingw_64/bin/moc.exe
+EdgeMonitorQt_autogen/timestamp: C:/Qt/6.11.1/mingw_64/bin/uic.exe
+EdgeMonitorQt_autogen/timestamp: CMakeFiles/EdgeMonitorQt.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target EdgeMonitorQt"
+	C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/EdgeMonitorQt_autogen.dir/AutogenInfo.json Debug
+	C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/EdgeMonitorQt_autogen/timestamp
 
 CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/flags.make
 CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/includes_CXX.rsp
 CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj: EdgeMonitorQt_autogen/mocs_compilation.cpp
 CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\EdgeMonitorQt.dir\EdgeMonitorQt_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\EdgeMonitorQt.dir\EdgeMonitorQt_autogen\mocs_compilation.cpp.obj -c C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\EdgeMonitorQt_autogen\mocs_compilation.cpp
 
 CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.i: cmake_force
@@ -99,7 +94,7 @@ CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/flags.ma
 CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/includes_CXX.rsp
 CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj: C:/Users/Steve/Desktop/EdgeMonitorQt/main.cpp
 CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj -MF CMakeFiles\EdgeMonitorQt.dir\main.cpp.obj.d -o CMakeFiles\EdgeMonitorQt.dir\main.cpp.obj -c C:\Users\Steve\Desktop\EdgeMonitorQt\main.cpp
 
 CMakeFiles/EdgeMonitorQt.dir/main.cpp.i: cmake_force
@@ -114,7 +109,7 @@ CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/fl
 CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/includes_CXX.rsp
 CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj: C:/Users/Steve/Desktop/EdgeMonitorQt/mainwindow.cpp
 CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj -MF CMakeFiles\EdgeMonitorQt.dir\mainwindow.cpp.obj.d -o CMakeFiles\EdgeMonitorQt.dir\mainwindow.cpp.obj -c C:\Users\Steve\Desktop\EdgeMonitorQt\mainwindow.cpp
 
 CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.i: cmake_force
@@ -125,27 +120,11 @@ CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Steve\Desktop\EdgeMonitorQt\mainwindow.cpp -o CMakeFiles\EdgeMonitorQt.dir\mainwindow.cpp.s
 
-CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/flags.make
-CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/includes_CXX.rsp
-CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj: .qt/rcc/qrc_EdgeMonitorQt_translations.cpp
-CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj: CMakeFiles/EdgeMonitorQt.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj -MF CMakeFiles\EdgeMonitorQt.dir\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\.qt\rcc\qrc_EdgeMonitorQt_translations.cpp.obj.d -o CMakeFiles\EdgeMonitorQt.dir\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\.qt\rcc\qrc_EdgeMonitorQt_translations.cpp.obj -c C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\.qt\rcc\qrc_EdgeMonitorQt_translations.cpp
-
-CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\.qt\rcc\qrc_EdgeMonitorQt_translations.cpp > CMakeFiles\EdgeMonitorQt.dir\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\.qt\rcc\qrc_EdgeMonitorQt_translations.cpp.i
-
-CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\.qt\rcc\qrc_EdgeMonitorQt_translations.cpp -o CMakeFiles\EdgeMonitorQt.dir\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\.qt\rcc\qrc_EdgeMonitorQt_translations.cpp.s
-
 # Object files for target EdgeMonitorQt
 EdgeMonitorQt_OBJECTS = \
 "CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj" \
-"CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj" \
-"CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj"
+"CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj"
 
 # External object files for target EdgeMonitorQt
 EdgeMonitorQt_EXTERNAL_OBJECTS =
@@ -153,17 +132,17 @@ EdgeMonitorQt_EXTERNAL_OBJECTS =
 EdgeMonitorQt.exe: CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj
 EdgeMonitorQt.exe: CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj
 EdgeMonitorQt.exe: CMakeFiles/EdgeMonitorQt.dir/mainwindow.cpp.obj
-EdgeMonitorQt.exe: CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj
 EdgeMonitorQt.exe: CMakeFiles/EdgeMonitorQt.dir/build.make
+EdgeMonitorQt.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Charts.a
+EdgeMonitorQt.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6OpenGLWidgets.a
 EdgeMonitorQt.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Widgets.a
+EdgeMonitorQt.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6OpenGL.a
 EdgeMonitorQt.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Gui.a
 EdgeMonitorQt.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Core.a
-EdgeMonitorQt.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6EntryPoint.a
-EdgeMonitorQt.exe: EdgeMonitorQt.exe.manifest
 EdgeMonitorQt.exe: CMakeFiles/EdgeMonitorQt.dir/linkLibs.rsp
 EdgeMonitorQt.exe: CMakeFiles/EdgeMonitorQt.dir/objects1.rsp
 EdgeMonitorQt.exe: CMakeFiles/EdgeMonitorQt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable EdgeMonitorQt.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable EdgeMonitorQt.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\EdgeMonitorQt.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -174,8 +153,7 @@ CMakeFiles/EdgeMonitorQt.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles\EdgeMonitorQt.dir\cmake_clean.cmake
 .PHONY : CMakeFiles/EdgeMonitorQt.dir/clean
 
-CMakeFiles/EdgeMonitorQt.dir/depend: .qt/rcc/qrc_EdgeMonitorQt_translations.cpp
-CMakeFiles/EdgeMonitorQt.dir/depend: EdgeMonitorQt_en_150.qm
+CMakeFiles/EdgeMonitorQt.dir/depend: EdgeMonitorQt_autogen/timestamp
 	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Steve\Desktop\EdgeMonitorQt C:\Users\Steve\Desktop\EdgeMonitorQt C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles\EdgeMonitorQt.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/EdgeMonitorQt.dir/depend
 

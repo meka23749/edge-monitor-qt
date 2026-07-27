@@ -1,13 +1,5 @@
 C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/EdgeMonitorQt.dir
-C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/EdgeMonitorQt_lupdate.dir
-C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/update_translations.dir
-C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/EdgeMonitorQt_lrelease.dir
-C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/release_translations.dir
 C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/edit_cache.dir
 C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/list_install_components.dir
-C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/install.dir
-C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/install/local.dir
-C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/install/strip.dir
 C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/EdgeMonitorQt_autogen_timestamp_deps.dir
 C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/CMakeFiles/EdgeMonitorQt_autogen.dir

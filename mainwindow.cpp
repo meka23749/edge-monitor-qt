@@ -1,15 +1,12 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <QScreen>
-#include <QStyleFactory>
 #include <QRandomGenerator>
-#include <QStorageInfo>
-#include <QRegularExpression>
+#include <QTextStream>
 
 /* ===== SensorWidget ===== */
 SensorWidget::SensorWidget(const QString& name, const QString& unit,
                            double threshold, QWidget* parent)
-    : QGroupBox(parent), unit(unit), threshold(threshold)
+    : QGroupBox(parent), unit(unit), threshold(threshold), alarm(false)
 {
     setTitle(name);
     setStyleSheet(
@@ -23,7 +20,7 @@ SensorWidget::SensorWidget(const QString& name, const QString& unit,
     QVBoxLayout* layout = new QVBoxLayout(this);
 
     valueLabel = new QLabel("--");
-    valueLabel->setStyleSheet("font-size: 36px; font-weight: bold; color: #0abde3;");
+    valueLabel->setStyleSheet("font-size: 28px; font-weight: bold; color: #0abde3;");
     valueLabel->setAlignment(Qt::AlignCenter);
 
     bar = new QProgressBar();
@@ -64,10 +61,10 @@ void SensorWidget::updateValue(double value)
     valueLabel->setText(QString("%1 %2").arg(value, 0, 'f', 1).arg(unit));
     bar->setValue(static_cast<int>(value));
 
-    bool alarm = value > threshold;
+    alarm = value > threshold;
 
     if (alarm) {
-        valueLabel->setStyleSheet("font-size: 36px; font-weight: bold; color: #ee5a24;");
+        valueLabel->setStyleSheet("font-size: 28px; font-weight: bold; color: #ee5a24;");
         statusLabel->setText("ALARM");
         statusLabel->setStyleSheet(
             "background-color: #3d0a0a; color: #ee5a24;"
@@ -85,7 +82,7 @@ void SensorWidget::updateValue(double value)
             "padding: 0 5px; color: #ee5a24; }"
             );
     } else {
-        valueLabel->setStyleSheet("font-size: 36px; font-weight: bold; color: #0abde3;");
+        valueLabel->setStyleSheet("font-size: 28px; font-weight: bold; color: #0abde3;");
         statusLabel->setText("OK");
         statusLabel->setStyleSheet(
             "background-color: #0a3d2e; color: #2ecc71;"
@@ -110,14 +107,14 @@ MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), pollCount(0), alarmCount(0), monitoring(false)
 {
     setWindowTitle("Industrial Edge Monitor - Qt Dashboard");
-    setMinimumSize(700, 500);
+    setMinimumSize(900, 800);
     setStyleSheet("background-color: #1a1a2e; color: #eeeeee;");
 
     QWidget* central = new QWidget(this);
     setCentralWidget(central);
 
     QVBoxLayout* mainLayout = new QVBoxLayout(central);
-    mainLayout->setSpacing(10);
+    mainLayout->setSpacing(8);
     mainLayout->setContentsMargins(20, 15, 20, 15);
 
     /* Title */
@@ -169,6 +166,61 @@ MainWindow::MainWindow(QWidget* parent)
     mainLayout->addLayout(topRow);
     mainLayout->addLayout(bottomRow);
 
+    /* Chart */
+    tempSeries = new QLineSeries();
+    tempSeries->setName("Temperature");
+    tempSeries->setColor(QColor("#ee5a24"));
+
+    cpuSeries = new QLineSeries();
+    cpuSeries->setName("CPU %");
+    cpuSeries->setColor(QColor("#0abde3"));
+
+    ramSeries = new QLineSeries();
+    ramSeries->setName("RAM %");
+    ramSeries->setColor(QColor("#2ecc71"));
+
+    QChart* chart = new QChart();
+    chart->addSeries(tempSeries);
+    chart->addSeries(cpuSeries);
+    chart->addSeries(ramSeries);
+    chart->setTitle("Sensor History");
+    chart->setTitleBrush(QBrush(QColor("#cccccc")));
+    chart->setBackgroundBrush(QBrush(QColor("#16213e")));
+    chart->legend()->setLabelColor(QColor("#cccccc"));
+    chart->setAnimationOptions(QChart::NoAnimation);
+
+    axisX = new QValueAxis();
+    axisX->setTitleText("Time (s)");
+    axisX->setRange(0, MAX_HISTORY * 2);
+    axisX->setLabelFormat("%d");
+    axisX->setLabelsColor(QColor("#888888"));
+    axisX->setTitleBrush(QBrush(QColor("#888888")));
+    axisX->setGridLineColor(QColor("#2a2a4a"));
+
+    axisY = new QValueAxis();
+    axisY->setTitleText("Value");
+    axisY->setRange(0, 100);
+    axisY->setLabelsColor(QColor("#888888"));
+    axisY->setTitleBrush(QBrush(QColor("#888888")));
+    axisY->setGridLineColor(QColor("#2a2a4a"));
+
+    chart->addAxis(axisX, Qt::AlignBottom);
+    chart->addAxis(axisY, Qt::AlignLeft);
+
+    tempSeries->attachAxis(axisX);
+    tempSeries->attachAxis(axisY);
+    cpuSeries->attachAxis(axisX);
+    cpuSeries->attachAxis(axisY);
+    ramSeries->attachAxis(axisX);
+    ramSeries->attachAxis(axisY);
+
+    chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setFixedHeight(200);
+    chartView->setStyleSheet("background-color: #16213e; border-radius: 8px;");
+
+    mainLayout->addWidget(chartView);
+
     /* Start/Stop button */
     startStopBtn = new QPushButton("START MONITORING");
     startStopBtn->setFixedHeight(40);
@@ -217,7 +269,7 @@ void MainWindow::toggleMonitoring()
     }
 }
 
-/* ===== Read real system metrics ===== */
+/* ===== Read system metrics ===== */
 double MainWindow::readCpuTemp()
 {
 #ifdef Q_OS_LINUX
@@ -289,6 +341,51 @@ double MainWindow::readDiskUsage()
     return 40.0 + QRandomGenerator::global()->bounded(30.0);
 }
 
+/* ===== Update chart ===== */
+void MainWindow::updateChart()
+{
+    double timePoint = pollCount * 2.0;
+
+    tempSeries->append(timePoint, readCpuTemp());
+    cpuSeries->append(timePoint, readCpuUsage());
+    ramSeries->append(timePoint, readRamUsage());
+
+    /* Keep only last MAX_HISTORY points */
+    while (tempSeries->count() > MAX_HISTORY) {
+        tempSeries->remove(0);
+        cpuSeries->remove(0);
+        ramSeries->remove(0);
+    }
+
+    /* Scroll X axis */
+    if (timePoint > MAX_HISTORY * 2) {
+        axisX->setRange(timePoint - MAX_HISTORY * 2, timePoint);
+    }
+}
+
+/* ===== Log to CSV ===== */
+void MainWindow::logToCsv(double temp, double cpu, double ram, double disk)
+{
+    QFile file("monitor_log.csv");
+    bool isNew = !file.exists();
+
+    if (file.open(QIODevice::Append | QIODevice::Text)) {
+        QTextStream stream(&file);
+        if (isNew) {
+            stream << "timestamp,cpu_temp,cpu_usage,ram_usage,disk_usage,state\n";
+        }
+        QString state = (temp > 70.0 || cpu > 80.0 || ram > 85.0) ? "ALARM" : "OK";
+        stream << QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss") << ","
+               << QString::number(temp, 'f', 1) << ","
+               << QString::number(cpu, 'f', 1) << ","
+               << QString::number(ram, 'f', 1) << ","
+               << QString::number(disk, 'f', 1) << ","
+               << state << "\n";
+        file.close();
+    }
+}
+
+/* ===== Update all sensors ===== */
 void MainWindow::updateSensors()
 {
     double temp = readCpuTemp();
@@ -302,7 +399,15 @@ void MainWindow::updateSensors()
     diskWidget->updateValue(disk);
 
     pollCount++;
-    bool anyAlarm = (temp > 70.0 || cpu > 80.0 || ram > 85.0 || disk > 90.0);
+
+    /* Update chart */
+    updateChart();
+
+    /* Log to CSV */
+    logToCsv(temp, cpu, ram, disk);
+
+    bool anyAlarm = (tempWidget->isAlarm() || cpuWidget->isAlarm() ||
+                     ramWidget->isAlarm() || diskWidget->isAlarm());
     if (anyAlarm) alarmCount++;
 
     pollLabel->setText(QString("Polls: %1").arg(pollCount));

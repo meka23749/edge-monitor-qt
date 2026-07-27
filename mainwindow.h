@@ -13,6 +13,12 @@
 #include <QFont>
 #include <QStorageInfo>
 #include <QRegularExpression>
+#include <QFile>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QValueAxis>
+
+#define MAX_HISTORY 30
 
 class SensorWidget : public QGroupBox {
     Q_OBJECT
@@ -20,14 +26,15 @@ public:
     SensorWidget(const QString& name, const QString& unit,
                  double threshold, QWidget* parent = nullptr);
     void updateValue(double value);
+    bool isAlarm() const { return alarm; }
 
 private:
-    QLabel* nameLabel;
     QLabel* valueLabel;
     QLabel* statusLabel;
     QProgressBar* bar;
     QString unit;
     double threshold;
+    bool alarm;
 };
 
 class MainWindow : public QMainWindow {
@@ -45,6 +52,8 @@ private:
     double readCpuUsage();
     double readRamUsage();
     double readDiskUsage();
+    void updateChart();
+    void logToCsv(double temp, double cpu, double ram, double disk);
 
     SensorWidget* tempWidget;
     SensorWidget* cpuWidget;
@@ -58,6 +67,14 @@ private:
 
     QPushButton* startStopBtn;
     QTimer* timer;
+
+    /* Chart */
+    QChartView* chartView;
+    QLineSeries* tempSeries;
+    QLineSeries* cpuSeries;
+    QLineSeries* ramSeries;
+    QValueAxis* axisX;
+    QValueAxis* axisY;
 
     int pollCount;
     int alarmCount;

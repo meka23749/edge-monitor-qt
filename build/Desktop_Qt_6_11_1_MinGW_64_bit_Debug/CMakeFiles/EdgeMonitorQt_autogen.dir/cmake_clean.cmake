@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/EdgeMonitorQt_autogen"
-  "EdgeMonitorQt_autogen/include/ui_mainwindow.h"
   "EdgeMonitorQt_autogen/mocs_compilation.cpp"
   "EdgeMonitorQt_autogen/timestamp"
 )

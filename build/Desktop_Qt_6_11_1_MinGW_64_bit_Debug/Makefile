@@ -84,51 +84,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\CMakeFiles C:\Users\Steve\Desktop\EdgeMonitorQt\build\Desktop_Qt_6_11_1_MinGW_64_bit_Debug\\CMakeFiles\progress.marks
@@ -172,58 +127,6 @@ EdgeMonitorQt: cmake_check_build_system
 EdgeMonitorQt/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EdgeMonitorQt.dir\build.make CMakeFiles/EdgeMonitorQt.dir/build
 .PHONY : EdgeMonitorQt/fast
-
-#=============================================================================
-# Target rules for targets named EdgeMonitorQt_lupdate
-
-# Build rule for target.
-EdgeMonitorQt_lupdate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 EdgeMonitorQt_lupdate
-.PHONY : EdgeMonitorQt_lupdate
-
-# fast build rule for target.
-EdgeMonitorQt_lupdate/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EdgeMonitorQt_lupdate.dir\build.make CMakeFiles/EdgeMonitorQt_lupdate.dir/build
-.PHONY : EdgeMonitorQt_lupdate/fast
-
-#=============================================================================
-# Target rules for targets named update_translations
-
-# Build rule for target.
-update_translations: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 update_translations
-.PHONY : update_translations
-
-# fast build rule for target.
-update_translations/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\update_translations.dir\build.make CMakeFiles/update_translations.dir/build
-.PHONY : update_translations/fast
-
-#=============================================================================
-# Target rules for targets named EdgeMonitorQt_lrelease
-
-# Build rule for target.
-EdgeMonitorQt_lrelease: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 EdgeMonitorQt_lrelease
-.PHONY : EdgeMonitorQt_lrelease
-
-# fast build rule for target.
-EdgeMonitorQt_lrelease/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EdgeMonitorQt_lrelease.dir\build.make CMakeFiles/EdgeMonitorQt_lrelease.dir/build
-.PHONY : EdgeMonitorQt_lrelease/fast
-
-#=============================================================================
-# Target rules for targets named release_translations
-
-# Build rule for target.
-release_translations: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 release_translations
-.PHONY : release_translations
-
-# fast build rule for target.
-release_translations/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\release_translations.dir\build.make CMakeFiles/release_translations.dir/build
-.PHONY : release_translations/fast
 
 #=============================================================================
 # Target rules for targets named EdgeMonitorQt_autogen_timestamp_deps
@@ -274,30 +177,6 @@ EdgeMonitorQt_autogen/mocs_compilation.s: EdgeMonitorQt_autogen/mocs_compilation
 EdgeMonitorQt_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\EdgeMonitorQt.dir\build.make CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.s
 .PHONY : EdgeMonitorQt_autogen/mocs_compilation.cpp.s
-
-build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.obj: build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj
-.PHONY : build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.obj
-
-# target to build an object file
-build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EdgeMonitorQt.dir\build.make CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj
-.PHONY : build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.obj
-
-build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.i: build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.i
-.PHONY : build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.i
-
-# target to preprocess a source file
-build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EdgeMonitorQt.dir\build.make CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.i
-.PHONY : build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.i
-
-build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.s: build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.s
-.PHONY : build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.s
-
-# target to generate assembly for a file
-build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\EdgeMonitorQt.dir\build.make CMakeFiles/EdgeMonitorQt.dir/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.s
-.PHONY : build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -354,24 +233,13 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... install
-	@echo ... install/local
-	@echo ... install/strip
-	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... EdgeMonitorQt_autogen
 	@echo ... EdgeMonitorQt_autogen_timestamp_deps
-	@echo ... EdgeMonitorQt_lrelease
-	@echo ... EdgeMonitorQt_lupdate
-	@echo ... release_translations
-	@echo ... update_translations
 	@echo ... EdgeMonitorQt
 	@echo ... EdgeMonitorQt_autogen/mocs_compilation.obj
 	@echo ... EdgeMonitorQt_autogen/mocs_compilation.i
 	@echo ... EdgeMonitorQt_autogen/mocs_compilation.s
-	@echo ... build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.obj
-	@echo ... build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.i
-	@echo ... build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/.qt/rcc/qrc_EdgeMonitorQt_translations.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

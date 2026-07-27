@@ -10,3 +10,6 @@ Real-time system monitoring dashboard built with C++ and Qt.
 - Build: CMake 
 ## Author 
 Steve Meka - Embedded Software Engineer 
+ 
+## Screenshot 
+![Qt Dashboard](docs/qt-dashboard.png) 

@@ -14,15 +14,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Qt
+      - name: Install Qt6
         run: |
           sudo apt-get update
-          sudo apt-get install -y qt6-base-dev qt6-charts-dev cmake g++
+          sudo apt-get install -y qt6-base-dev cmake g++
 
-      - name: Build
+      - name: Build project
         run: |
-          mkdir build
-          cd build
+          mkdir build && cd build
           cmake ..
           make
           echo "Build successful"
+
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: C++ static analysis
+        run: |
+          sudo apt-get install -y cppcheck
+          cppcheck --error-exitcode=1 mainwindow.cpp main.cpp
+          echo "Code quality OK"

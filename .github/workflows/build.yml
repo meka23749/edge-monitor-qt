@@ -1,0 +1,28 @@
+name: Build Edge Monitor Qt
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-linux:
+    name: Build on Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qt6-base-dev qt6-charts-dev cmake g++
+
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          make
+          echo "Build successful"

@@ -505,7 +505,6 @@ void MainWindow::updateSensors()
     /* Update chart */
     updateChart();
     updateGpio();
-    updateLeds(anyAlarm);
 
     /* Log to CSV */
     logToCsv(temp, cpu, ram, disk);
@@ -513,6 +512,8 @@ void MainWindow::updateSensors()
     bool anyAlarm = (tempWidget->isAlarm() || cpuWidget->isAlarm() ||
                      ramWidget->isAlarm() || diskWidget->isAlarm());
     if (anyAlarm) alarmCount++;
+
+    updateLeds(anyAlarm);
 
     pollLabel->setText(QString("Polls: %1").arg(pollCount));
     alarmLabel->setText(QString("Alarms: %1").arg(alarmCount));

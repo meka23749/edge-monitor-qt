@@ -511,5 +511,5 @@ C:/Users/Steve/Desktop/EdgeMonitorQt/mainwindow.h
  mdp:C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
  mdp:C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/EdgeMonitorQt_autogen/moc_predefs.h
  mdp:C:/Users/Steve/Desktop/EdgeMonitorQt/mainwindow.h
-C:/Users/Steve/Desktop/EdgeMonitorQt/mainwindow.cpp
 C:/Users/Steve/Desktop/EdgeMonitorQt/main.cpp
+C:/Users/Steve/Desktop/EdgeMonitorQt/mainwindow.cpp

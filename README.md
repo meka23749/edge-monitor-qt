@@ -1,4 +1,4 @@
-# Industrial Edge Monitor — Qt Dashboard
+# Edge Monitor — Qt Dashboard
 
 Real-time system monitoring dashboard built with modern C++ and Qt 6. Reads CPU temperature, CPU usage, RAM and disk metrics with live charts and CSV data logging.
 
@@ -30,34 +30,39 @@ Cross-platform: reads real hardware sensors on Linux, simulates values on Window
 
 ```text
                      System Hardware
+                        (TI AM67A)
                             |
                             v
 
-+-------------------+
-|   Sensor Readers  |
-|   (C++ classes)   |
-+-------------------+
-| /proc/stat        |
-| /proc/meminfo     |
-| /sys/thermal      |
-| statvfs           |
-+-------------------+
-      |          \
-      |           \
-      v            v
++--------------------+       +--------------------+
+| Sensor Readers     | ----> | Sensor Widgets     |
+|--------------------|       | (Qt UI Cards)      |
+| /proc/stat         |       +--------------------+
+| /proc/meminfo      |
+| /sys/thermal       |       +--------------------+
+| statvfs            | ----> | Live Chart         |
++--------------------+       | (QChart)           |
+                             +--------------------+
 
-+-------------------+    +-------------------+
-| Sensor Widgets    |    |    Live Chart     |
-|  (Qt UI cards)    |    |     (QChart)      |
-+-------------------+    +-------------------+
+           |
+           v
 
-      |
-      v
++--------------------+       +--------------------+
+| GPIO Monitor       | ----> | GPIO Status        |
+|--------------------|       | HIGH / LOW         |
+| libgpiod v2        |       +--------------------+
+| gpioget -c x y     |
++--------------------+
 
-+-------------------+
-|    CSV Logger     |
-| monitor_log.csv   |
-+-------------------+
+           |
+           v
+
++--------------------+       +--------------------+
+| LED Controller     |       | CSV Logger         |
+|--------------------|       | monitor_log.csv    |
+| ACT = OK (Green)   |       +--------------------+
+| PWR = ALARM (Red)  |
++--------------------+
 ```
 
 On Linux: reads real values from /proc and /sys
@@ -67,25 +72,46 @@ On Windows: generates realistic simulated values
 
 | Sensor | Source | Threshold |
 |--------|--------|-----------|
-| CPU Temperature | /sys/class/thermal | > 70 C |
+| CPU Temperature | /sys/class/thermal | > 70°C |
 | CPU Usage | /proc/stat | > 80% |
 | RAM Usage | /proc/meminfo | > 85% |
 | Disk Usage | statvfs("/") | > 90% |
 
+## GPIO Mapping (BeagleY-AI)
+
+| Display | Chip | Line | Header Pin |
+|---------|------|------|------------|
+| GPIO8 | gpiochip1 | 0 | P8 |
+| GPIO7 | gpiochip1 | 9 | P7 |
+| GPIO22 | gpiochip2 | 41 | P22 |
+| GPIO17 | gpiochip3 | 8 | P17 |
+
+## LED Control
+
+| State | ACT LED | PWR LED |
+|-------|---------|---------|
+| OK | ON (green) | OFF |
+| ALARM | OFF | ON (red) |
+
+## Tech Stack
+
+- **Language**: C++17
+- **Framework**: Qt 6 (Widgets, Charts)
+- **GPIO**: libgpiod v2 (gpioget/gpioset)
+- **Build**: CMake
+- **CI/CD**: GitHub Actions
+- **Platform**: Linux (BeagleY-AI) / Windows (simulated)
+
 ## Build
 
-### Prerequisites
-- Qt 6.x (Widgets + Charts modules)
-- CMake 3.16+
-- C++17 compiler (GCC, MinGW or MSVC)
-
-### Build on Linux
+### On BeagleY-AI (Linux ARM64)
 ```bash
 sudo apt install qt6-base-dev qt6-charts-dev cmake g++
-mkdir build && cd build
-cmake ..
-make
-./EdgeMonitorQt
+git clone https://github.com/meka23749/edge-monitor-qt.git
+cd edge-monitor-qt
+cmake -B build -S .
+cmake --build build
+./build/EdgeMonitorQt
 ```
 
 ### Build on Windows
@@ -112,7 +138,7 @@ timestamp,cpu_temp,cpu_usage,ram_usage,disk_usage,state
 
 ## Author
 
-**Steve Meka** — Embedded Software Engineer
+**Steve Meka** — Software Engineer
 
 - Website: [stevkmef.com](https://www.stevkmef.com)
 - GitHub: [meka23749](https://github.com/meka23749)

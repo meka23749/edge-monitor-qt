@@ -66,6 +66,7 @@ private:
     QLabel* gpioLabels[GPIO_COUNT];
     QLabel* gpioStateLabels[GPIO_COUNT];
     void updateGpio();
+    void updateLeds(bool alarm);
     bool readGpioPin(int pin);
 
     QLabel* stateLabel;

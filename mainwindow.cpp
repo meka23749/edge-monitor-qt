@@ -470,6 +470,23 @@ void MainWindow::updateGpio()
     }
 }
 
+void MainWindow::updateLeds(bool alarm)
+{
+#ifdef Q_OS_LINUX
+    QFile actLed("/sys/class/leds/ACT/brightness");
+    QFile pwrLed("/sys/class/leds/PWR/brightness");
+
+    if (actLed.open(QIODevice::WriteOnly)) {
+        actLed.write(alarm ? "0" : "1");
+        actLed.close();
+    }
+    if (pwrLed.open(QIODevice::WriteOnly)) {
+        pwrLed.write(alarm ? "1" : "0");
+        pwrLed.close();
+    }
+#endif
+}
+
 /* ===== Update all sensors ===== */
 void MainWindow::updateSensors()
 {
@@ -488,6 +505,7 @@ void MainWindow::updateSensors()
     /* Update chart */
     updateChart();
     updateGpio();
+    updateLeds(anyAlarm);
 
     /* Log to CSV */
     logToCsv(temp, cpu, ram, disk);

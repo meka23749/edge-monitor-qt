@@ -25,6 +25,7 @@ C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/
   C:/Qt/6.11.1/mingw_64/include/QtCore/QList \
   C:/Qt/6.11.1/mingw_64/include/QtCore/QMargins \
   C:/Qt/6.11.1/mingw_64/include/QtCore/QObject \
+  C:/Qt/6.11.1/mingw_64/include/QtCore/QProcess \
   C:/Qt/6.11.1/mingw_64/include/QtCore/QRect \
   C:/Qt/6.11.1/mingw_64/include/QtCore/QRegularExpression \
   C:/Qt/6.11.1/mingw_64/include/QtCore/QSize \
@@ -123,6 +124,7 @@ C:/Users/Steve/Desktop/EdgeMonitorQt/build/Desktop_Qt_6_11_1_MinGW_64_bit_Debug/
   C:/Qt/6.11.1/mingw_64/include/QtCore/qoverload.h \
   C:/Qt/6.11.1/mingw_64/include/QtCore/qpair.h \
   C:/Qt/6.11.1/mingw_64/include/QtCore/qpoint.h \
+  C:/Qt/6.11.1/mingw_64/include/QtCore/qprocess.h \
   C:/Qt/6.11.1/mingw_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.11.1/mingw_64/include/QtCore/qrect.h \
   C:/Qt/6.11.1/mingw_64/include/QtCore/qrefcount.h \

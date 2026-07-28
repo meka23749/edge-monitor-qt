@@ -17,8 +17,10 @@
 #include <QtCharts/QChartView>
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QValueAxis>
+#include <QProcess>
 
 #define MAX_HISTORY 30
+#define GPIO_COUNT 4
 
 class SensorWidget : public QGroupBox {
     Q_OBJECT
@@ -59,6 +61,12 @@ private:
     SensorWidget* cpuWidget;
     SensorWidget* ramWidget;
     SensorWidget* diskWidget;
+    /* GPIO */
+    QGroupBox* gpioBox;
+    QLabel* gpioLabels[GPIO_COUNT];
+    QLabel* gpioStateLabels[GPIO_COUNT];
+    void updateGpio();
+    bool readGpioPin(int pin);
 
     QLabel* stateLabel;
     QLabel* pollLabel;

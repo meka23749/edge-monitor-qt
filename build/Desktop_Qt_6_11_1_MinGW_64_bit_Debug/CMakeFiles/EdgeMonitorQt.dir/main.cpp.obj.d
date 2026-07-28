@@ -518,6 +518,8 @@ CMakeFiles/EdgeMonitorQt.dir/main.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtGui/QImage \
  C:/Qt/6.11.1/mingw_64/include/QtCharts/QValueAxis \
  C:/Qt/6.11.1/mingw_64/include/QtCharts/qvalueaxis.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QProcess \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qprocess.h \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/QApplication \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/qapplication.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QLocale \

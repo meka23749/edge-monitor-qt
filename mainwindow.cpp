@@ -2,6 +2,7 @@
 #include <QApplication>
 #include <QRandomGenerator>
 #include <QTextStream>
+#include <QProcess>
 
 /* ===== SensorWidget ===== */
 SensorWidget::SensorWidget(const QString& name, const QString& unit,
@@ -165,6 +166,34 @@ MainWindow::MainWindow(QWidget* parent)
 
     mainLayout->addLayout(topRow);
     mainLayout->addLayout(bottomRow);
+
+    /* GPIO Status */
+    gpioBox = new QGroupBox("GPIO Status");
+    gpioBox->setStyleSheet(
+        "QGroupBox { font-weight: bold; border: 2px solid #3a3a5c;"
+        "border-radius: 8px; margin-top: 12px; padding: 15px; padding-top: 25px;"
+        "background-color: #1e1e3a; color: #cccccc; }"
+        "QGroupBox::title { subcontrol-origin: margin; left: 10px;"
+        "padding: 0 5px; color: #0abde3; }"
+        );
+    QHBoxLayout* gpioLayout = new QHBoxLayout(gpioBox);
+
+    for (int i = 0; i < GPIO_COUNT; i++) {
+        QVBoxLayout* pinLayout = new QVBoxLayout();
+        gpioLabels[i] = new QLabel("--");
+        gpioLabels[i]->setStyleSheet("font-size: 13px; color: #cccccc; font-weight: bold;");
+        gpioLabels[i]->setAlignment(Qt::AlignCenter);
+
+        gpioStateLabels[i] = new QLabel("--");
+        gpioStateLabels[i]->setAlignment(Qt::AlignCenter);
+        gpioStateLabels[i]->setFixedWidth(70);
+
+        pinLayout->addWidget(gpioLabels[i]);
+        pinLayout->addWidget(gpioStateLabels[i]);
+        gpioLayout->addLayout(pinLayout);
+    }
+
+    mainLayout->addWidget(gpioBox);
 
     /* Chart */
     tempSeries = new QLineSeries();
@@ -385,6 +414,62 @@ void MainWindow::logToCsv(double temp, double cpu, double ram, double disk)
     }
 }
 
+/* ===== Read GPIO pin via libgpiod v2 ===== */
+bool MainWindow::readGpioPin(int pin)
+{
+#ifdef Q_OS_LINUX
+    /* BeagleY-AI GPIO mapping:
+     * GPIO8  = chip 1, line 0
+     * GPIO7  = chip 1, line 9
+     * GPIO22 = chip 2, line 41
+     * GPIO17 = chip 3, line 8
+     */
+    int chip = -1, line = -1;
+    switch (pin) {
+    case 8:  chip = 1; line = 0;  break;
+    case 7:  chip = 1; line = 9;  break;
+    case 22: chip = 2; line = 41; break;
+    case 17: chip = 3; line = 8;  break;
+    default: return false;
+    }
+
+    QProcess proc;
+    proc.start("gpioget", QStringList() << "-c" << QString::number(chip) << QString::number(line));
+    proc.waitForFinished(500);
+    QString output = proc.readAllStandardOutput().trimmed();
+    return output.contains("active");
+#endif
+    return QRandomGenerator::global()->bounded(2) == 1;
+}
+
+/* ===== Update GPIO display ===== */
+void MainWindow::updateGpio()
+{
+    int pins[GPIO_COUNT] = {8, 7, 22, 17};
+    QString pinNames[GPIO_COUNT] = {"GPIO8", "GPIO7", "GPIO22", "GPIO17"};
+
+    for (int i = 0; i < GPIO_COUNT; i++) {
+        bool state = readGpioPin(pins[i]);
+        gpioLabels[i]->setText(pinNames[i]);
+
+        if (state) {
+            gpioStateLabels[i]->setText("HIGH");
+            gpioStateLabels[i]->setStyleSheet(
+                "background-color: #0a3d2e; color: #2ecc71;"
+                "border-radius: 10px; padding: 3px 12px;"
+                "font-size: 11px; font-weight: bold;"
+                );
+        } else {
+            gpioStateLabels[i]->setText("LOW");
+            gpioStateLabels[i]->setStyleSheet(
+                "background-color: #2a2a4a; color: #888888;"
+                "border-radius: 10px; padding: 3px 12px;"
+                "font-size: 11px; font-weight: bold;"
+                );
+        }
+    }
+}
+
 /* ===== Update all sensors ===== */
 void MainWindow::updateSensors()
 {
@@ -402,6 +487,7 @@ void MainWindow::updateSensors()
 
     /* Update chart */
     updateChart();
+    updateGpio();
 
     /* Log to CSV */
     logToCsv(temp, cpu, ram, disk);

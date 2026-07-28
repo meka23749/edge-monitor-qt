@@ -519,6 +519,8 @@ CMakeFiles/EdgeMonitorQt.dir/EdgeMonitorQt_autogen/mocs_compilation.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtGui/QImage \
  C:/Qt/6.11.1/mingw_64/include/QtCharts/QValueAxis \
  C:/Qt/6.11.1/mingw_64/include/QtCharts/qvalueaxis.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QProcess \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qprocess.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qtextcursor.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qtmochelpers.h \
